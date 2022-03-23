@@ -1,10 +1,14 @@
 <script lang="ts">
+	import RetractableMenu from "./components/RetractableMenu.svelte";
 	export let name: string;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<RetractableMenu />
+	<div class="content">
+		<h1>Hello {name}!</h1>
+		<p>Bibliothèque de composants svelte</p>	
+	</div>
 </main>
 
 <style lang="scss">
@@ -22,6 +26,14 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	.content {
+		width: 100%;
+		height: 200vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 	}
 
 	@media (min-width: 640px) {
