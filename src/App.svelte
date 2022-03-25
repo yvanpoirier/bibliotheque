@@ -1,10 +1,10 @@
 <script lang="ts">
-	import RetractableMenu from "./components/RetractableMenu.svelte";
+	import MenuRetractable from "./components/MenuRetractable.svelte";
 	export let name: string;
 </script>
 
 <main>
-	<RetractableMenu />
+	<MenuRetractable />
 	<div class="content">
 		<h1>Hello {name}!</h1>
 		<p>Bibliothèque de composants svelte</p>	
