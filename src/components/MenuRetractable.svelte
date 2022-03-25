@@ -43,12 +43,13 @@
 
 <style lang="scss">
 
-    $height: 50px;
+    $height: 50px; // utiliser une variable globale $header_height
     $retractation: -50px;
 	
     .menuRetractable {
         position: fixed;
         top: 0px;
+        left: 0px;
         width: 100%;
         height: $height;
         background-color: green;
