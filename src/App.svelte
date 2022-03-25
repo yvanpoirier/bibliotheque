@@ -1,10 +1,11 @@
 <script lang="ts">
-	import RetractableMenu from "./components/RetractableMenu.svelte";
+	import MenuRetractable from "./components/MenuRetractable.svelte";
+	import MenuDecrease from "./components/MenuDecrease.svelte";
 	export let name: string;
 </script>
 
 <main>
-	<RetractableMenu />
+	<MenuDecrease />
 	<div class="content">
 		<h1>Hello {name}!</h1>
 		<p>Bibliothèque de composants svelte</p>	
@@ -16,7 +17,6 @@
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
 		background-color: $color_primary;
 	}
@@ -34,11 +34,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		margin: $header_height 0 0 0;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>

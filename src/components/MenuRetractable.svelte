@@ -5,7 +5,7 @@
 <script lang="ts">
 	
     let previousTop: number = 100000;
-    let hideRetractableMenu: boolean = false;
+    let hideMenuRetractable: boolean = false;
     const startRetractation: number = 100;
 
     /**
@@ -17,10 +17,10 @@
         var currentTop = window.scrollY;
         if (currentTop < previousTop || currentTop < startRetractation) {
             // go up
-            hideRetractableMenu = false;
+            hideMenuRetractable = false;
         } else {
             // go down
-            hideRetractableMenu = true;
+            hideMenuRetractable = true;
         }
         previousTop = currentTop;
     }
@@ -32,8 +32,9 @@
 <!------------------------------>
 
 <svelte:window on:scroll={showHide} />
-<div id="retractable_menu" class="retractableMenu" class:retractableMenu--hide={hideRetractableMenu}>
-	---------- Retractable menu ----------
+<div id="menu_retractable" class="menuRetractable" class:menuRetractable--hide={hideMenuRetractable}>
+	-------------- Menu Retractable --------------<br>
+    -------------- Start after {startRetractation} pixels --------------
 </div>
 
 <!--------------------------->
@@ -42,15 +43,17 @@
 
 <style lang="scss">
 
-    $height: 50px;
+    $height: 50px; // utiliser une variable globale $header_height
     $retractation: -50px;
 	
-    .retractableMenu {
+    .menuRetractable {
         position: fixed;
         top: 0px;
+        left: 0px;
         width: 100%;
         height: $height;
         background-color: green;
+        color: yellow;
         transition: transform 1s;
         &--hide {
             transform: translateY($retractation);
