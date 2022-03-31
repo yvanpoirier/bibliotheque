@@ -1,16 +1,18 @@
 <script lang="ts">
 	import MenuRetractable from "./components/MenuRetractable.svelte";
 	import MenuDecrease from "./components/MenuDecrease.svelte";
+	import Parallax from "./components/Parallax.svelte";
 	export let name: string;
 </script>
 
-<main>
+<Parallax />
+<!-- <main>
 	<MenuDecrease />
 	<div class="content">
 		<h1>Hello {name}!</h1>
 		<p>Bibliothèque de composants svelte</p>	
 	</div>
-</main>
+</main> -->
 
 <style lang="scss">
 	
